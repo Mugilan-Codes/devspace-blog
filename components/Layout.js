@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import Header from './Header';
+
 export default function Layout({ title, keywords, description, children }) {
   return (
     <div>
@@ -9,8 +11,10 @@ export default function Layout({ title, keywords, description, children }) {
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
 
-        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+        <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
       </Head>
+
+      <Header />
 
       <main className='container mx-auto my-7'>{children}</main>
     </div>
