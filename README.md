@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DevSpace Blog
 
-## Getting Started
+## Next.js Dev to Deployment Udemy Course by Brad Traversy
 
-First, run the development server:
+- [Udemy Course Link](https://www.udemy.com/course/nextjs-dev-to-deployment/)
+- [GitHub Project Code](https://github.com/bradtraversy/devspace-blog)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### TODO
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Resources
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+  - [Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+  - [GitHub](https://github.com/vercel/next.js/) repository
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Markdown
+  - [Markdown Guide](https://www.markdownguide.org/) - Basic Syntax, Extended Syntax, & Cheat Sheet
+  - [StackEdit](https://stackedit.io/) - In-browser Markdown editor
+  - (*Optional*) [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced) - VSCode Extension.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Tailwind CSS](https://tailwindcss.com/)
+  - [Documentation](https://tailwindcss.com/docs)
+  - [GitHub](https://github.com/tailwindlabs/tailwindcss) repository
+  - [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs) - Setting up Tailwind CSS in a Next.js project.
+  - [Next JS Example](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss) - this repo is used when `npx create-next-app -e with-tailwindcss my-project` to create nextjs app.
