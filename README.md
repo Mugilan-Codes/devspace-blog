@@ -23,3 +23,8 @@
   - [GitHub](https://github.com/tailwindlabs/tailwindcss) repository
   - [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs) - Setting up Tailwind CSS in a Next.js project.
   - [Next JS Example](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss) - this repo is used when `npx create-next-app -e with-tailwindcss my-project` to create nextjs app.
+
+- [Lorem Markdownum](https://jaspervdj.be/lorem-markdownum/) - Generate markdown. [GitHub](https://github.com/jaspervdj/lorem-markdownum)
+- [Random User Generator](https://randomuser.me/) - A free, open-source API for generating random user data. Like Lorem Ipsum, but for people.
+
+- [gray-matter](https://www.npmjs.com/package/gray-matter) - Parse front-matter from a string or file. [GitHub](https://github.com/jonschlinkert/gray-matter)
