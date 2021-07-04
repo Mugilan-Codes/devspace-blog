@@ -38,11 +38,14 @@ export default function Post({ post }) {
         </Link>
 
         <div className='flex items-center'>
-          <img
-            src={post.frontmatter.author_image}
-            alt='author image'
-            className='mx-4 w-10 h-10 object-cover rounded-full hidden sm:block'
-          />
+          <div className='mx-4 w-10 h-10 hidden sm:block relative'>
+            <Image
+              src={post.frontmatter.author_image}
+              layout='fill'
+              objectFit='contain'
+              className='rounded-full'
+            />
+          </div>
 
           <h3 className='text-gray-700 font-bold'>{post.frontmatter.author}</h3>
         </div>

@@ -30,3 +30,7 @@
 - [gray-matter](https://www.npmjs.com/package/gray-matter) - Parse front-matter from a string or file. [GitHub](https://github.com/jonschlinkert/gray-matter)
 
 - [Next JS. 'fs' module not found issue.](https://github.com/vercel/next.js/discussions/12124)
+
+- [Marked](https://www.npmjs.com/package/marked) - A markdown parser built for speed. [Docs](https://marked.js.org/)
+
+- [How to use Tailwind CSS with Next.js Image](https://stackoverflow.com/a/65134645/12381908)
