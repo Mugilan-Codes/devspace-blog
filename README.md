@@ -28,3 +28,5 @@
 - [Random User Generator](https://randomuser.me/) - A free, open-source API for generating random user data. Like Lorem Ipsum, but for people.
 
 - [gray-matter](https://www.npmjs.com/package/gray-matter) - Parse front-matter from a string or file. [GitHub](https://github.com/jonschlinkert/gray-matter)
+
+- [Next JS. 'fs' module not found issue.](https://github.com/vercel/next.js/discussions/12124)
