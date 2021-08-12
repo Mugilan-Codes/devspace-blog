@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import Pagination from '@/components/Pagination';
 import Post from '@/components/Post';
 import {
   getPaginatedPostsPage,
@@ -11,11 +12,15 @@ export default function BlogPage({ posts, numPages, currentPage }) {
     <Layout>
       <h1 className='text-5xl border-b-4 p-5 font-bold'>Blog</h1>
 
+      <Pagination currentPage={currentPage} numPages={numPages} />
+
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
         {posts.map((post, index) => (
           <Post key={index} post={post} />
         ))}
       </div>
+
+      <Pagination currentPage={currentPage} numPages={numPages} />
     </Layout>
   );
 }
