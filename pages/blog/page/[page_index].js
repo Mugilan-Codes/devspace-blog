@@ -1,8 +1,12 @@
 import Layout from '@/components/Layout';
 import Post from '@/components/Post';
-import { getPostsPages, getSortedPosts } from '@/lib/posts';
+import {
+  getPaginatedPostsPage,
+  getPostsPages,
+  getSortedPosts,
+} from '@/lib/posts';
 
-export default function BlogPage({ posts }) {
+export default function BlogPage({ posts, numPages, currentPage }) {
   return (
     <Layout>
       <h1 className='text-5xl border-b-4 p-5 font-bold'>Blog</h1>
@@ -25,12 +29,18 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ params }) => {
+  const page = parseInt((params && params.page_index) || 1);
+
   const posts = getSortedPosts();
+
+  const { slicedPosts, numPages } = getPaginatedPostsPage({ page, posts });
 
   return {
     props: {
-      posts,
+      posts: slicedPosts,
+      numPages,
+      currentPage: page,
     },
   };
 };
