@@ -1,26 +1,28 @@
-// import Fuse from 'fuse.js';
+import Fuse from 'fuse.js';
 
 import { getSortedPosts } from '@/lib/posts';
 import { IS_PROD } from '@/config/index';
 
-const posts = IS_PROD ? require('../../cache/data').posts : getSortedPosts();
+// const posts = IS_PROD ? require('../../cache/data').posts : getSortedPosts();
+const posts =
+  process.env.NODE_ENV === 'production'
+    ? require('../../cache/data').posts
+    : getSortedPosts();
+
+const fuse = new Fuse(posts, {
+  includeMatches: true,
+  minMatchCharLength: 2,
+  findAllMatches: true,
+  keys: [
+    'frontmatter.title',
+    'frontmatter.excerpt',
+    'frontmatter.category',
+    'frontmatter.author',
+  ],
+  useExtendedSearch: true,
+});
 
 export default (req, res) => {
-  const Fuse = require('fuse.js');
-
-  const fuse = new Fuse(posts, {
-    includeMatches: true,
-    minMatchCharLength: 2,
-    findAllMatches: true,
-    keys: [
-      'frontmatter.title',
-      'frontmatter.excerpt',
-      'frontmatter.category',
-      'frontmatter.author',
-    ],
-    useExtendedSearch: true,
-  });
-
   const searchTerm = `'${req.query.q}`; // Search for items that include(') the query term
 
   const fuseResults = fuse.search(searchTerm);
