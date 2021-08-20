@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 import { getSortedPosts } from '@/lib/posts';
 import { IS_PROD } from '@/config/index';
 
-const posts = IS_PROD ? require('cache/data').posts : getSortedPosts();
+const posts = IS_PROD ? require('../../cache/data').posts : getSortedPosts();
 
 const fuse = new Fuse(posts, {
   includeMatches: true,

@@ -38,3 +38,5 @@
 - [React Icons - All Files](https://react-icons.github.io/react-icons/) - svg react icons of popular icon packs. [GitHub](https://github.com/react-icons/react-icons)
 
 - [Fuse.js](https://fusejs.io/) - a powerful, lightweight fuzzy-search library, with zero dependencies. [GitHub](https://github.com/krisk/Fuse)
+
+- [husky](https://typicode.github.io/husky/#/) - Modern native Git hooks made easy 🐶 woof!. [GitHub](https://github.com/typicode/husky) && [NPM](https://www.npmjs.com/package/husky)
