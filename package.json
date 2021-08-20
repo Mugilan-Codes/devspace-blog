@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "cache-posts": "node scripts/cache.js"
+    "cache-posts": "node scripts/cache.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
+    "husky": "^7.0.1",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
   }
