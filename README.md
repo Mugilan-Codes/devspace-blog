@@ -34,3 +34,5 @@
 - [Marked](https://www.npmjs.com/package/marked) - A markdown parser built for speed. [Docs](https://marked.js.org/)
 
 - [How to use Tailwind CSS with Next.js Image](https://stackoverflow.com/a/65134645/12381908)
+
+- [React Icons - All Files](https://react-icons.github.io/react-icons/) - svg react icons of popular icon packs. [GitHub](https://github.com/react-icons/react-icons)
