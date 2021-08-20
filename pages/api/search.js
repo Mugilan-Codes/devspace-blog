@@ -5,20 +5,20 @@ import { IS_PROD } from '@/config/index';
 
 const posts = IS_PROD ? require('../../cache/data').posts : getSortedPosts();
 
-const fuse = new Fuse(posts, {
-  includeMatches: true,
-  minMatchCharLength: 2,
-  findAllMatches: true,
-  keys: [
-    'frontmatter.title',
-    'frontmatter.excerpt',
-    'frontmatter.category',
-    'frontmatter.author',
-  ],
-  useExtendedSearch: true,
-});
-
 export default (req, res) => {
+  const fuse = new Fuse(posts, {
+    includeMatches: true,
+    minMatchCharLength: 2,
+    findAllMatches: true,
+    keys: [
+      'frontmatter.title',
+      'frontmatter.excerpt',
+      'frontmatter.category',
+      'frontmatter.author',
+    ],
+    useExtendedSearch: true,
+  });
+
   const searchTerm = `'${req.query.q}`; // Search for items that include(') the query term
 
   const fuseResults = fuse.search(searchTerm);
