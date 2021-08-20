@@ -9,18 +9,18 @@ export default function Search() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  const getResults = async (searchTerm = '') => {
-    if (searchTerm === '') {
-      setSearchResults([]);
-    } else {
-      const res = await fetch(`/api/search?q=${searchTerm}`);
-      const { results } = await res.json();
-      setSearchResults(results);
-    }
-  };
-
   useEffect(() => {
-    getResults(searchTerm);
+    const getResults = async () => {
+      if (searchTerm === '') {
+        setSearchResults([]);
+      } else {
+        const res = await fetch(`/api/search?q=${searchTerm}`);
+        const { results } = await res.json();
+        setSearchResults(results);
+      }
+    };
+
+    getResults();
   }, [searchTerm]);
 
   return (
