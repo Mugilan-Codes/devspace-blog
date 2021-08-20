@@ -36,3 +36,5 @@
 - [How to use Tailwind CSS with Next.js Image](https://stackoverflow.com/a/65134645/12381908)
 
 - [React Icons - All Files](https://react-icons.github.io/react-icons/) - svg react icons of popular icon packs. [GitHub](https://github.com/react-icons/react-icons)
+
+- [Fuse.js](https://fusejs.io/) - a powerful, lightweight fuzzy-search library, with zero dependencies. [GitHub](https://github.com/krisk/Fuse)
