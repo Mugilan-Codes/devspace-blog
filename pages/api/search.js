@@ -1,18 +1,34 @@
+import Fuse from 'fuse.js';
+
 import { getSortedPosts } from '@/lib/posts';
 import { IS_PROD } from '@/config/index';
 
 const posts = IS_PROD ? [] : getSortedPosts();
 
-// TODO: add fuzzy-search (https://github.com/wouter2203/fuzzy-search)
-export default (req, res) => {
-  console.log('Search Posts...');
+const fuse = new Fuse(posts, {
+  includeMatches: true,
+  minMatchCharLength: 2,
+  findAllMatches: true,
+  keys: [
+    'frontmatter.title',
+    'frontmatter.excerpt',
+    'frontmatter.category',
+    'frontmatter.author',
+  ],
+  useExtendedSearch: true,
+});
 
-  const results = posts.filter(
-    ({ frontmatter: { title, excerpt, category } }) =>
-      title.toLowerCase().indexOf(req.query.q) != -1 ||
-      excerpt.toLowerCase().indexOf(req.query.q) != -1 ||
-      category.toLowerCase().indexOf(req.query.q) != -1
-  );
+export default (req, res) => {
+  const searchTerm = `'${req.query.q}`; // Search for items that include(') the query term
+
+  const fuseResults = fuse.search(searchTerm);
+  // console.log({ fuseResults });
+
+  // HACK: rewrited to easily access the necessary content
+  const results = fuseResults.map((fres) => ({
+    slug: fres.item.slug,
+    frontmatter: fres.item.frontmatter,
+  }));
 
   res.status(200).json(JSON.stringify({ results }));
 };
