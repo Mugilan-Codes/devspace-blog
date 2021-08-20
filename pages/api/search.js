@@ -1,4 +1,4 @@
-import Fuse from 'fuse.js';
+// import Fuse from 'fuse.js';
 
 import { getSortedPosts } from '@/lib/posts';
 import { IS_PROD } from '@/config/index';
@@ -6,6 +6,8 @@ import { IS_PROD } from '@/config/index';
 const posts = IS_PROD ? require('../../cache/data').posts : getSortedPosts();
 
 export default (req, res) => {
+  const Fuse = require('fuse.js');
+
   const fuse = new Fuse(posts, {
     includeMatches: true,
     minMatchCharLength: 2,
