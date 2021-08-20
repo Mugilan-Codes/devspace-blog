@@ -1,9 +1,26 @@
 import { useState, useEffect } from 'react';
 import { FaSearch } from '@react-icons/all-files/fa/FaSearch';
 
+// TODO: Add Debounced search
+// TODO: Add SWR
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+
+  const getResults = async (searchTerm = '') => {
+    if (searchTerm === '') {
+      setSearchResults([]);
+    } else {
+      const res = await fetch(`/api/search?q=${searchTerm}`);
+      const { results } = await res.json();
+      console.log(results);
+      setSearchResults(results);
+    }
+  };
+
+  useEffect(() => {
+    getResults(searchTerm);
+  }, [searchTerm]);
 
   return (
     <div className='relative bg-gray-600 p-4'>
