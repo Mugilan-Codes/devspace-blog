@@ -3,16 +3,18 @@ import Image from 'next/image';
 
 import CategoryLabel from './CategoryLabel';
 
-export default function Post({ post }) {
+export default function Post({ post, compact }) {
   return (
     <div className='w-full px-10 py-6 bg-white rounded-lg shadow-md mt-6'>
-      <Image
-        src={post.frontmatter.cover_image}
-        alt='cover image'
-        width={600}
-        height={420}
-        className='mb-4 rounded'
-      />
+      {!compact && (
+        <Image
+          src={post.frontmatter.cover_image}
+          alt='cover image'
+          width={600}
+          height={420}
+          className='mb-4 rounded'
+        />
+      )}
 
       <div className='flex justify-between items-center'>
         <span className='font-light text-gray-600'>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { FaSearch } from '@react-icons/all-files/fa/FaSearch';
 
+import SearchResults from '@/components/SearchResults';
+
 // TODO: Add Debounced search
 // TODO: Add SWR
 export default function Search() {
@@ -13,7 +15,6 @@ export default function Search() {
     } else {
       const res = await fetch(`/api/search?q=${searchTerm}`);
       const { results } = await res.json();
-      console.log(results);
       setSearchResults(results);
     }
   };
@@ -41,6 +42,8 @@ export default function Search() {
           </form>
         </div>
       </div>
+
+      <SearchResults results={searchResults} />
     </div>
   );
 }
